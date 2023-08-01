@@ -51,15 +51,43 @@
                     android:layout_weight="0.5"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/CoolW1"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:text="@string/water_cooler"
-                        android:textSize="48dp" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textViewW1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/imageViewW1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.15"
+                            app:srcCompat="@drawable/green" />
+
+                        <TextView
+                            android:id="@+id/CoolW1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:gravity="center_horizontal"
+                            android:text="@string/water_cooler"
+                            android:textSize="48dp" />
+
+                        <TextView
+                            android:id="@+id/textViewW2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.35"
+                            android:visibility="invisible" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -115,15 +143,43 @@
                     android:layout_weight="0.5"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/CoolW2"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="10dp"
-                        android:gravity="center_horizontal"
-                        android:text="@string/water_cooler"
-                        android:textSize="48dp" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textViewW3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:visibility="invisible" />
+
+                        <ImageView
+                            android:id="@+id/imageViewW2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="0.15"
+                            app:srcCompat="@drawable/green" />
+
+                        <TextView
+                            android:id="@+id/CoolW2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_weight="0.5"
+                            android:gravity="center_horizontal"
+                            android:text="@string/water_cooler"
+                            android:textSize="48dp" />
+
+                        <TextView
+                            android:id="@+id/textViewW4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.35"
+                            android:visibility="invisible" />
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"

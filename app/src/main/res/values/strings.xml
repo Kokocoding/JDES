@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JDES</string>
+    <string name="temperature_title">入風口溫度： </string>
+    <string name="temperature_water">冷水溫度： </string>
+    <string name="air_conditioner">冷氣機%1$d</string>
+    <string name="water_cooler">水冷機%1$d</string>
+    <string name="min">分鐘</string>
+    <string name="timing">開始定時</string>
+    <string name="timingClose">關閉定時</string>
+</resources>

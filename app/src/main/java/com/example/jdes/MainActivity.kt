@@ -24,14 +24,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textViewIds = arrayOf(R.id.AirC1, R.id.AirC2, R.id.AirC3, R.id.AirC4, R.id.AirC5, R.id.AirC6, R.id.AirC7, R.id.AirC8)
-
-        for ((index, textViewId) in textViewIds.withIndex()) {
-            val textView = findViewById<TextView>(textViewId)
-            val formattedText = getString(R.string.air_conditioner, index + 1)
-            textView.text = formattedText
-        }
-
         val textViewIds2 = arrayOf(R.id.CoolW1, R.id.CoolW2)
 
         for ((index, textViewId) in textViewIds2.withIndex()) {
@@ -48,6 +40,14 @@ class MainActivity : AppCompatActivity() {
                 println(e)
             }
         }.start()
+        val textViewIds = arrayOf(R.id.AirC1, R.id.AirC2, R.id.AirC3, R.id.AirC4, R.id.AirC5, R.id.AirC6, R.id.AirC7, R.id.AirC8)
+
+        for ((index, textViewId) in textViewIds.withIndex()) {
+            val textView = findViewById<TextView>(textViewId)
+            val formattedText = getString(R.string.air_conditioner, index + 1)
+            textView.text = formattedText
+        }
+
         */
     }
     fun openTiming(view: View){

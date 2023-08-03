@@ -7,4 +7,19 @@
     <string name="min">分鐘</string>
     <string name="timing">開始定時</string>
     <string name="timingClose">關閉定時</string>
+    <string name="air_conditionerDL">舞台左</string>
+    <string name="air_conditionerDR">舞台右</string>
+    <string name="air_conditioner1FRF">1F右前</string>
+    <string name="air_conditioner1FRC">1F右中</string>
+    <string name="air_conditioner1FRB">1F右後</string>
+    <string name="air_conditioner1FL">1F左</string>
+    <string name="air_conditioner2FRF">2F右前</string>
+    <string name="air_conditioner2FRB">2F右後</string>
+    <string name="timingWarming">定時時間(單位:分)</string>
+    <string name="allCall">全部</string>
+    <string name="group1">1F群組</string>
+    <string name="group2">2F群組</string>
+    <string name="group3">舞台群組</string>
+    <string name="logo">logo</string>
+    <string name="image">image</string>
 </resources>

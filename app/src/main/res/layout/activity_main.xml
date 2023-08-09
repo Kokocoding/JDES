@@ -16,6 +16,18 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginTop="30dp">
 
             <LinearLayout
@@ -29,8 +41,8 @@
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_marginStart="30dp"
-                    android:src="@drawable/logo"
-                    android:contentDescription="@string/logo" />
+                    android:contentDescription="@string/logo"
+                    android:src="@drawable/logo" />
 
             </LinearLayout>
 
@@ -39,17 +51,17 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp" >
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
                 android:baselineAligned="false"
+                android:orientation="horizontal"
                 tools:ignore="UselessParent">
 
                 <LinearLayout
@@ -76,8 +88,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.15"
-                            app:srcCompat="@drawable/green"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/green" />
 
                         <TextView
                             android:id="@+id/CoolW1"
@@ -109,14 +121,14 @@
                             android:id="@+id/TemperatureAT1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/temperature_title"
+                            android:text="@string/temperature_water_i"
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/TemperatureA1"
+                            android:id="@+id/TemperatureWI1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -132,14 +144,14 @@
                             android:id="@+id/TemperatureWT1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/temperature_water"
+                            android:text="@string/temperature_water_o"
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/TemperatureW1"
+                            android:id="@+id/TemperatureWO1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15度"
+                            android:text="15°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -170,8 +182,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.15"
-                            app:srcCompat="@drawable/green"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/green" />
 
                         <TextView
                             android:id="@+id/CoolW2"
@@ -202,14 +214,14 @@
                             android:id="@+id/TemperatureAT2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/temperature_title"
+                            android:text="@string/temperature_water_i"
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/TemperatureA2"
+                            android:id="@+id/TemperatureWI2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -225,14 +237,14 @@
                             android:id="@+id/TemperatureWT2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/temperature_water"
+                            android:text="@string/temperature_water_o"
                             android:textSize="24sp" />
 
                         <TextView
-                            android:id="@+id/TemperatureW2"
+                            android:id="@+id/TemperatureWO2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15度"
+                            android:text="15°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -244,19 +256,19 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
                 android:baselineAligned="false"
+                android:orientation="horizontal"
                 tools:ignore="UselessParent">
 
                 <LinearLayout
@@ -276,8 +288,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/green"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC1"
@@ -299,6 +311,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="1"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -321,7 +335,7 @@
                             android:id="@+id/Temperature1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -345,8 +359,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC2"
@@ -368,6 +382,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="2"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -390,7 +406,7 @@
                             android:id="@+id/Temperature2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -414,8 +430,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC3"
@@ -437,6 +453,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="3"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -459,7 +477,7 @@
                             android:id="@+id/Temperature3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -483,8 +501,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC4"
@@ -506,6 +524,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="4"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -528,7 +548,7 @@
                             android:id="@+id/Temperature4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -540,19 +560,19 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
                 android:baselineAligned="false"
+                android:orientation="horizontal"
                 tools:ignore="UselessParent">
 
                 <LinearLayout
@@ -572,8 +592,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC5"
@@ -582,7 +602,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="0.6"
                             android:gravity="center_horizontal"
-                            android:text="@string/air_conditionerDL"
+                            android:text="@string/air_conditioner2FRF"
                             android:textSize="48sp" />
 
                         <Switch
@@ -595,6 +615,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="5"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -617,7 +639,7 @@
                             android:id="@+id/Temperature5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -641,8 +663,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC6"
@@ -651,7 +673,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="0.6"
                             android:gravity="center_horizontal"
-                            android:text="@string/air_conditionerDR"
+                            android:text="@string/air_conditioner2FRB"
                             android:textSize="48sp" />
 
                         <Switch
@@ -664,6 +686,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="6"
                             tools:ignore="TooManyViews,UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -686,7 +710,7 @@
                             android:id="@+id/Temperature6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -710,8 +734,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC7"
@@ -720,7 +744,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="0.6"
                             android:gravity="center_horizontal"
-                            android:text="@string/air_conditioner2FRF"
+                            android:text="@string/air_conditionerDL"
                             android:textSize="48sp" />
 
                         <Switch
@@ -733,6 +757,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="7"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -755,7 +781,7 @@
                             android:id="@+id/Temperature7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -779,8 +805,8 @@
                             android:layout_height="match_parent"
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
-                            app:srcCompat="@drawable/red"
-                            android:contentDescription="@string/image" />
+                            android:contentDescription="@string/image"
+                            app:srcCompat="@drawable/red" />
 
                         <TextView
                             android:id="@+id/AirC8"
@@ -789,7 +815,7 @@
                             android:layout_gravity="center_horizontal"
                             android:layout_weight="0.6"
                             android:gravity="center_horizontal"
-                            android:text="@string/air_conditioner2FRB"
+                            android:text="@string/air_conditionerDR"
                             android:textSize="48sp" />
 
                         <Switch
@@ -802,6 +828,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="8"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -824,7 +852,7 @@
                             android:id="@+id/Temperature8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32度"
+                            android:text="32°C"
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -836,19 +864,19 @@
         </TableRow>
 
         <TableRow
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
                 android:baselineAligned="false"
+                android:orientation="horizontal"
                 tools:ignore="UselessParent">
 
                 <LinearLayout
@@ -883,6 +911,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="127"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -921,6 +951,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="124"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -959,6 +991,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="125"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -997,6 +1031,8 @@
                             android:scaleX="1.5"
                             android:scaleY="1.5"
                             android:theme="@style/SCBSwitch"
+                            android:onClick="switchChange"
+                            android:tag="126"
                             tools:ignore="UseSwitchCompatOrMaterialXml" />
 
                     </LinearLayout>
@@ -1033,11 +1069,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.2"
+                    android:autofillHints="@string/timingWarming"
+                    android:contentDescription="@string/timingWarming"
                     android:ems="10"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:contentDescription="@string/timingWarming"
-                    android:autofillHints="@string/timingWarming"
                     tools:ignore="LabelFor" />
 
                 <TextView

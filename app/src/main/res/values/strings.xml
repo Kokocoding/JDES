@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">JDES</string>
     <string name="temperature_title">入風口溫度： </string>
-    <string name="temperature_water">冷水溫度： </string>
+    <string name="temperature_water_i">進水溫度： </string>
+    <string name="temperature_water_o">出水溫度： </string>
     <string name="air_conditioner">冷氣機%1$d</string>
     <string name="water_cooler">水冷機%1$d</string>
     <string name="min">分鐘</string>

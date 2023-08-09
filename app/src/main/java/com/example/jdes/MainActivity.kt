@@ -216,6 +216,12 @@ class MainActivity : AppCompatActivity() {
             view.visibility = View.VISIBLE
             closeButton.visibility = View.GONE
 
+            var i = 1
+            while(i < 9){
+                var cmd = byteArrayOf(0x7A, i.toByte(), 0x0B, (i+0x0B).toByte(), 0xBB.toByte())
+                writeData(cmd)
+                i++
+            }
         }
     }
 

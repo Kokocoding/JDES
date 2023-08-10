@@ -17,6 +17,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var port: UsbSerialPort
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
+    private val switchIds = arrayOf(R.id.switch1, R.id.switch2, R.id.switch3, R.id.switch4, R.id.switch5, R.id.switch6, R.id.switch7, R.id.switch8)
+    private val imagesIds = arrayOf(R.id.imageViewC1, R.id.imageViewC2, R.id.imageViewC3, R.id.imageViewC4, R.id.imageViewC5, R.id.imageViewC6, R.id.imageViewC7, R.id.imageViewC8)
+    private val switchGIds = arrayOf(R.id.switchAllCall, R.id.switchGroup1, R.id.switchGroup2, R.id.switchGroup3)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             while (isActive) { // 在协程活动期间持续监听
                 val data = readData() // 调用您的 readData() 函数来读取数据
                 processData(data)
-                delay(1000) // 每秒监听一次，根据实际需求调整延迟时间
+                delay(300) // 每秒监听一次，根据实际需求调整延迟时间
             }
         }
     }
@@ -43,18 +47,15 @@ class MainActivity : AppCompatActivity() {
     private suspend fun processData(data: ByteArray) {
         // 在这里处理接收到的数据
         // 根据实际需求解析和处理 data 数组
-        val Temper = mapOf("11" to R.id.Temperature1, "12" to R.id.Temperature2, "13" to R.id.Temperature3, "14" to R.id.Temperature4,
+        val temper = mapOf("11" to R.id.Temperature1, "12" to R.id.Temperature2, "13" to R.id.Temperature3, "14" to R.id.Temperature4,
                            "15" to R.id.Temperature5, "16" to R.id.Temperature6, "17" to R.id.Temperature7, "18" to R.id.Temperature8)
-        val TemperInWater = mapOf("19" to R.id.TemperatureWI1, "1a" to R.id.TemperatureWI2)
-        val TemperOutWater = mapOf("19" to R.id.TemperatureWO1, "1a" to R.id.TemperatureWO2)
-        val tv = findViewById<TextView>(R.id.textView4)
+        val temperInWater = mapOf("19" to R.id.TemperatureWI1, "1a" to R.id.TemperatureWI2)
+        val temperOutWater = mapOf("19" to R.id.TemperatureWO1, "1a" to R.id.TemperatureWO2)
 
-        if (data.isNotEmpty() && data[0].toByte() == 0x7A.toByte()) {
-            val dataType = data[1].toUByte().toString(16) // 将第二个字节转换为十六进制字符串
-
-            when (dataType) {
-                in Temper.keys -> {
-                    val textViewId = Temper[dataType]
+        if (data.isNotEmpty() && data[0] == 0x7A.toByte()) {
+            when (val dataType = data[1].toUByte().toString(16)) { // 将第二个字节转换为十六进制字符串
+                in temper.keys -> {
+                    val textViewId = temper[dataType]
                     val textView = findViewById<TextView>(textViewId!!)
                     val temperature = data[2].toInt() // 假设温度数据在第三个字节
                     val temperatureStr = "$temperature°C"
@@ -63,10 +64,10 @@ class MainActivity : AppCompatActivity() {
                         textView.text = temperatureStr
                     }
                 }
-                in TemperInWater.keys ->{
-                    val textViewIdIn = TemperInWater[dataType]
+                in temperInWater.keys ->{
+                    val textViewIdIn = temperInWater[dataType]
                     val textViewIn = findViewById<TextView>(textViewIdIn!!)
-                    val textViewIdOut = TemperOutWater[dataType]
+                    val textViewIdOut = temperOutWater[dataType]
                     val textViewOut = findViewById<TextView>(textViewIdOut!!)
 
                     val temperatureIn = data[2].toInt() // 假设温度数据在第三个字节
@@ -82,18 +83,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     fun switchChange(view: View){
-        val switchIds = arrayOf(R.id.switch1, R.id.switch2, R.id.switch3, R.id.switch4, R.id.switch5, R.id.switch6, R.id.switch7, R.id.switch8)
-        val imagesIds = arrayOf(R.id.imageViewC1, R.id.imageViewC2, R.id.imageViewC3, R.id.imageViewC4, R.id.imageViewC5, R.id.imageViewC6, R.id.imageViewC7, R.id.imageViewC8)
-
         val tag = view.tag
-        var cmd = byteArrayOf()
 
         fun setImageResourceAndCmd(imageViewId: Int, isSwitchChecked: Boolean, index: Int) {
+            val cmd: ByteArray
             val switch = findViewById<Switch>(switchIds[index])
             val imageView = findViewById<ImageView>(imageViewId)
 
@@ -162,28 +159,29 @@ class MainActivity : AppCompatActivity() {
         port.setParameters(9600, 8, UsbSerialPort.STOPBITS_1, UsbSerialPort.PARITY_NONE)
     }
 
-    fun writeData(cmd: ByteArray) {
+    private fun writeData(cmd: ByteArray) {
         //write
         port.write(cmd, 0)
     }
 
-    fun readData(): ByteArray {
+    private fun readData(): ByteArray {
         //read
         val bufferSize = 1024 // 适当的缓冲区大小，根据实际需求调整
         val buffer = ByteArray(bufferSize)
         var bytesRead = 0
 
         try {
-            bytesRead = port?.read(buffer, buffer.size.toLong().toInt()) ?: 0
+            bytesRead = port.read(buffer, buffer.size.toLong().toInt())
         } catch (e: IOException) {
             e.printStackTrace()
         }
 
         // 根据实际读取的字节数截取数据
-        val response = buffer.copyOf(bytesRead)
-        return response
+        return buffer.copyOf(bytesRead)
     }
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    @OptIn(DelicateCoroutinesApi::class)
     fun openTiming(view: View){
         val textViewRemainingTime = findViewById<TextView>(R.id.textViewRemainingTime)
         val textViewMin = findViewById<TextView>(R.id.min)
@@ -202,23 +200,39 @@ class MainActivity : AppCompatActivity() {
 
             var remainingTime = timeInMillis / 1000 // 将毫秒转换为秒
             while (remainingTime > 0) {
-                var hour = remainingTime/60/60
-                var min = remainingTime/60%60
-                var sec = remainingTime%60
-                textViewRemainingTime.text = "剩餘時間：$hour 時 $min 分 $sec 秒"
+                val hour = remainingTime/60/60
+                val min = remainingTime/60%60
+                val sec = remainingTime%60
+
+                val remainingTimeString = getString(R.string.remaining_time, hour, min, sec)
+                textViewRemainingTime.text = remainingTimeString
                 delay(1000) // 每隔1秒更新一次UI
                 remainingTime--
             }
 
+            //關閉UI
             textViewRemainingTime.visibility = View.GONE
             editTextNumber.visibility = View.VISIBLE
             textViewMin.visibility = View.VISIBLE
             view.visibility = View.VISIBLE
             closeButton.visibility = View.GONE
 
+            for ((index, imageViewId) in imagesIds.withIndex()) {
+                val switch = findViewById<Switch>(switchIds[index])
+                val imageView = findViewById<ImageView>(imageViewId)
+                switch.isChecked = false
+                imageView.setImageResource(R.drawable.red)
+            }
+
+            for (switchGId in switchGIds) {
+                val switch = findViewById<Switch>(switchGId)
+                switch.isChecked = false
+            }
+
+            //關閉cmd
             var i = 1
             while(i < 9){
-                var cmd = byteArrayOf(0x7A, i.toByte(), 0x0B, (i+0x0B).toByte(), 0xBB.toByte())
+                val cmd = byteArrayOf(0x7A, i.toByte(), 0x0B, (i+0x0B).toByte(), 0xBB.toByte())
                 writeData(cmd)
                 i++
             }

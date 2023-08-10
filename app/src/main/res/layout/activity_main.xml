@@ -22,7 +22,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="" />
         </TableRow>
 
         <TableRow
@@ -128,7 +128,7 @@
                             android:id="@+id/TemperatureWI1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -151,7 +151,7 @@
                             android:id="@+id/TemperatureWO1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -221,7 +221,7 @@
                             android:id="@+id/TemperatureWI2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -244,7 +244,7 @@
                             android:id="@+id/TemperatureWO2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="15°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -335,7 +335,7 @@
                             android:id="@+id/Temperature1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -406,7 +406,7 @@
                             android:id="@+id/Temperature2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -477,7 +477,7 @@
                             android:id="@+id/Temperature3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -548,7 +548,7 @@
                             android:id="@+id/Temperature4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -639,7 +639,7 @@
                             android:id="@+id/Temperature5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -664,7 +664,8 @@
                             android:layout_marginStart="10dp"
                             android:layout_weight="0.2"
                             android:contentDescription="@string/image"
-                            app:srcCompat="@drawable/red" />
+                            app:srcCompat="@drawable/red"
+                            tools:ignore="TooManyViews" />
 
                         <TextView
                             android:id="@+id/AirC6"
@@ -710,7 +711,7 @@
                             android:id="@+id/Temperature6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -781,7 +782,7 @@
                             android:id="@+id/Temperature7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>
@@ -852,7 +853,7 @@
                             android:id="@+id/Temperature8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="32°C"
+                            android:text=""
                             android:textSize="24sp" />
 
                     </LinearLayout>

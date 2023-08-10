@@ -23,4 +23,5 @@
     <string name="group3">舞台群組</string>
     <string name="logo">logo</string>
     <string name="image">image</string>
+    <string name="remaining_time">剩餘時間：%1$d 時 %2$d 分 %3$d 秒</string>
 </resources>

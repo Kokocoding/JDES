@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 in temper.keys -> {
                     val textViewId = temper[dataType]
                     val textView = findViewById<TextView>(textViewId!!)
-                    val temperature = data[2].toInt()
+                    val temperature = data[2].toString()
                     val temperatureStr = "$temperature°C"
 
                     withContext(Dispatchers.Main) {
@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity() {
                     val textViewIdOut = temperOutWater[dataType]
                     val textViewOut = findViewById<TextView>(textViewIdOut!!)
 
-                    val temperatureIn = data[2].toInt()
-                    val temperatureOut = data[3].toInt()
+                    val temperatureIn = data[2].toString()
+                    val temperatureOut = data[3].toString()
 
                     val temperatureStrI = "$temperatureIn°C"
                     val temperatureStrO = "$temperatureOut°C"
@@ -128,21 +128,9 @@ class MainActivity : AppCompatActivity() {
             when (tagInt) {
                 124, 125, 126, 127 -> {
                     for ((index, imageViewId) in imagesIds.withIndex()) {
-                        if (tagInt == 124 && index < 4) setImageResourceAndCmd(
-                            imageViewId,
-                            isSwitchChecked,
-                            index
-                        )
-                        if (tagInt == 125 && (index == 4 || index == 5)) setImageResourceAndCmd(
-                            imageViewId,
-                            isSwitchChecked,
-                            index
-                        )
-                        if (tagInt == 126 && (index == 6 || index == 7)) setImageResourceAndCmd(
-                            imageViewId,
-                            isSwitchChecked,
-                            index
-                        )
+                        if (tagInt == 124 && index < 4) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                        if (tagInt == 125 && (index == 4 || index == 5)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                        if (tagInt == 126 && (index == 6 || index == 7)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
                         if (tagInt == 127) {
                             setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
                             switchG1.isChecked = switchAllCall.isChecked

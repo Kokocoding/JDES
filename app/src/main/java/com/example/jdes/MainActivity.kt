@@ -58,12 +58,17 @@ class MainActivity : AppCompatActivity() {
                     val textViewId = temper[dataType]
                     val textView = findViewById<TextView>(textViewId!!)
                     val temperature = data[2].toString()
-                    val temperatureStr = "$temperature°C"
+                    var temperatureStr = "$temperature°C"
+
+                    if(data[2] == 0xFF.toByte()){
+                        temperatureStr = "感測器錯誤"
+                    }
 
                     withContext(Dispatchers.Main) {
                         textView.text = temperatureStr
                     }
                 }
+
                 in temperInWater.keys ->{
                     val textViewIdIn = temperInWater[dataType]
                     val textViewIn = findViewById<TextView>(textViewIdIn!!)
@@ -72,9 +77,15 @@ class MainActivity : AppCompatActivity() {
 
                     val temperatureIn = data[2].toString()
                     val temperatureOut = data[3].toString()
+                    var temperatureStrI = "$temperatureIn°C"
+                    var temperatureStrO = "$temperatureOut°C"
 
-                    val temperatureStrI = "$temperatureIn°C"
-                    val temperatureStrO = "$temperatureOut°C"
+                    if(data[2] == 0xFF.toByte()){
+                        temperatureStrI = "感測器錯誤"
+                    }
+                    if(data[3] == 0xFF.toByte()){
+                        temperatureStrO = "感測器錯誤"
+                    }
 
                     withContext(Dispatchers.Main) {
                         textViewIn.text = temperatureStrI

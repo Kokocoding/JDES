@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 in temper.keys -> {
                     val textViewId = temper[dataType]
                     val textView = findViewById<TextView>(textViewId!!)
-                    val temperature = data[2].toString()
+                    val temperature = data[2].toInt().toString()
                     var temperatureStr = "$temperature°C"
 
                     if(data[2] == 0xFF.toByte()){
@@ -75,8 +75,8 @@ class MainActivity : AppCompatActivity() {
                     val textViewIdOut = temperOutWater[dataType]
                     val textViewOut = findViewById<TextView>(textViewIdOut!!)
 
-                    val temperatureIn = data[2].toString()
-                    val temperatureOut = data[3].toString()
+                    val temperatureIn = data[2].toInt().toString()
+                    val temperatureOut = data[3].toInt().toString()
                     var temperatureStrI = "$temperatureIn°C"
                     var temperatureStrO = "$temperatureOut°C"
 
@@ -163,7 +163,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 
     private fun openPort(){

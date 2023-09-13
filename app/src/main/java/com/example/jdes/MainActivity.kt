@@ -121,10 +121,10 @@ class MainActivity : AppCompatActivity() {
 //            val byteArrayString = cmd.joinToString(" ") { it.toString(16).padStart(2, '0') }
 //            tv.text = "$tvText\n$byteArrayString"
 
-            lifecycleScope.launch {
+//            lifecycleScope.launch {
                 writeData(cmd)
-                delay(500) // 添加延遲
-            }
+//                delay(100) // 添加延遲
+//            }
         }
 
         if (tag is String) {
@@ -137,18 +137,58 @@ class MainActivity : AppCompatActivity() {
             val switchG3 = findViewById<Switch>(R.id.switchGroup3)
 
             when (tagInt) {
+//                124 -> {
+//                    setImageResourceAndCmd(imagesIds[0], isSwitchChecked, 0)
+//                    setImageResourceAndCmd(imagesIds[1], isSwitchChecked, 1)
+//                    setImageResourceAndCmd(imagesIds[2], isSwitchChecked, 2)
+//                    setImageResourceAndCmd(imagesIds[3], isSwitchChecked, 3)
+//                    switchAllCall.isChecked =
+//                        switchG1.isChecked && switchG2.isChecked && switchG3.isChecked
+//                }
+//
+//                125 -> {
+//                    setImageResourceAndCmd(imagesIds[4], isSwitchChecked, 4)
+//                    setImageResourceAndCmd(imagesIds[5], isSwitchChecked, 5)
+//                    switchAllCall.isChecked =
+//                        switchG1.isChecked && switchG2.isChecked && switchG3.isChecked
+//                }
+//
+//                126 -> {
+//                    setImageResourceAndCmd(imagesIds[6], isSwitchChecked, 6)
+//                    setImageResourceAndCmd(imagesIds[7], isSwitchChecked, 7)
+//                    switchAllCall.isChecked =
+//                        switchG1.isChecked && switchG2.isChecked && switchG3.isChecked
+//                }
+//
+//                127 -> {
+//                    setImageResourceAndCmd(imagesIds[0], isSwitchChecked, 0)
+//                    setImageResourceAndCmd(imagesIds[1], isSwitchChecked, 1)
+//                    setImageResourceAndCmd(imagesIds[2], isSwitchChecked, 2)
+//                    setImageResourceAndCmd(imagesIds[3], isSwitchChecked, 3)
+//                    setImageResourceAndCmd(imagesIds[4], isSwitchChecked, 4)
+//                    setImageResourceAndCmd(imagesIds[5], isSwitchChecked, 5)
+//                    setImageResourceAndCmd(imagesIds[6], isSwitchChecked, 6)
+//                    setImageResourceAndCmd(imagesIds[7], isSwitchChecked, 7)
+//                    switchG1.isChecked = switchAllCall.isChecked
+//                    switchG2.isChecked = switchAllCall.isChecked
+//                    switchG3.isChecked = switchAllCall.isChecked
+//                }
+
                 124, 125, 126, 127 -> {
-                    for ((index, imageViewId) in imagesIds.withIndex()) {
-                        if (tagInt == 124 && index < 4) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
-                        if (tagInt == 125 && (index == 4 || index == 5)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
-                        if (tagInt == 126 && (index == 6 || index == 7)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
-                        if (tagInt == 127) {
-                            setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
-                            switchG1.isChecked = switchAllCall.isChecked
-                            switchG2.isChecked = switchAllCall.isChecked
-                            switchG3.isChecked = switchAllCall.isChecked
-                        } else {
-                            switchAllCall.isChecked = switchG1.isChecked && switchG2.isChecked && switchG3.isChecked
+                    lifecycleScope.launch {
+                        for ((index, imageViewId) in imagesIds.withIndex()) {
+                            if (tagInt == 124 && index < 4) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                            if (tagInt == 125 && (index == 4 || index == 5)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                            if (tagInt == 126 && (index == 6 || index == 7)) setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                            if (tagInt == 127) {
+                                setImageResourceAndCmd(imageViewId, isSwitchChecked, index)
+                                switchG1.isChecked = switchAllCall.isChecked
+                                switchG2.isChecked = switchAllCall.isChecked
+                                switchG3.isChecked = switchAllCall.isChecked
+                            } else {
+                                switchAllCall.isChecked = switchG1.isChecked && switchG2.isChecked && switchG3.isChecked
+                            }
+                            delay(100) // 添加延遲
                         }
                     }
                 }
